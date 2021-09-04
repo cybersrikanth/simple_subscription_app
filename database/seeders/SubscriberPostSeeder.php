@@ -2,12 +2,12 @@
 
 namespace Database\Seeders;
 
+use App\Models\Post;
 use App\Models\Subscriber;
-use App\Models\Website;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class WebsiteSubscriberSeeder extends Seeder
+class SubscriberPostSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -16,17 +16,17 @@ class WebsiteSubscriberSeeder extends Seeder
      */
     public function run()
     {
-        $website_subscribers = [
+        $subscriber_posts = [
             [
                 'subscriber_id' => Subscriber::first()->id,
-                'website_id' => Website::first()->id 
+                'post_id' => Post::first()->id,
             ],
             [
                 'subscriber_id' => Subscriber::first()->id,
-                'website_id' => Website::latest('id')->first()->id 
+                'post_id' => Post::latest('id')->first()->id,
             ]
         ];
 
-        DB::table('website_subscribers')->upsert($website_subscribers, ['website_id', 'subscriber_id'], ['website_id', 'subscriber_id']);
+        DB::table('subscriber_posts')->upsert($subscriber_posts, ['subscriber_id', 'post_id'], ['subscriber_id', 'post_id']);
     }
 }

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6cadd819a6415b190ae2704ced6e6c8b",
+    "content-hash": "9cd0717c78d97331ae575590e1d96f23",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -113,6 +113,39 @@
                 }
             ],
             "time": "2021-08-15T20:50:18+00:00"
+        },
+        {
+            "name": "cybersrikanth/laravel-apidoc",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://gitlab.com/cybersrikanth/laravel-apidoc.git",
+                "reference": "b0df6684fe9301ca0b4dcbdf3c911843f6c2a569"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://gitlab.com/api/v4/projects/cybersrikanth%2Flaravel-apidoc/repository/archive.zip?sha=b0df6684fe9301ca0b4dcbdf3c911843f6c2a569",
+                "reference": "b0df6684fe9301ca0b4dcbdf3c911843f6c2a569",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "ApiDoc\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "cybersrikanth",
+                    "email": "cybersrikanth001@gmail.com"
+                }
+            ],
+            "description": "Generate customizable simple api documentation from test case",
+            "time": "2020-09-21T13:03:07+00:00"
         },
         {
             "name": "doctrine/inflector",
@@ -7092,7 +7125,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "cybersrikanth/laravel-apidoc": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

@@ -6,14 +6,15 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Website extends Model
+class Post extends Model
 {
     use HasFactory;
     use SoftDeletes;
 
     protected $fillable = [
-        'url', 
-        'name'
+        'website_id',
+        'title',
+        'description'
     ];
 
     protected $hidden = [
@@ -24,6 +25,11 @@ class Website extends Model
 
     public function subscribers()
     {
-        return $this->belongsToMany(subscriber::class, 'website_subscribers');
+        return $this->belongsToMany(Subscriber::class, SubscriberPost::class);
+    }
+
+    public function website()
+    {
+        return $this->belongsTo(Website::class);
     }
 }
